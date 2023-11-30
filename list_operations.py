@@ -12,7 +12,7 @@ def head(input_list):
       'Jan'
     """
 
-    return []
+    return input_list[0]
 
 
 def tail(input_list):
@@ -25,7 +25,7 @@ def tail(input_list):
 
     """
 
-    return []
+    return input_list[1:]
 
 
 def last(input_list):
@@ -38,7 +38,7 @@ def last(input_list):
 
     """
 
-    return []
+    return input_list[-1]
 
 
 def top(input_list):
@@ -51,7 +51,7 @@ def top(input_list):
 
     """
 
-    return []
+    return input_list[:-1]
 
 
 def first_three(input_list):
@@ -64,7 +64,7 @@ def first_three(input_list):
 
     """
 
-    return []
+    return input_list[:3]
 
 
 def last_five(input_list):
@@ -77,7 +77,7 @@ def last_five(input_list):
 
     """
 
-    return []
+    return input_list[-1:-6]
 
 
 def middle(input_list):
@@ -90,7 +90,7 @@ def middle(input_list):
 
     """
 
-    return []
+    return input_list[2:-2]
 
 
 def inner_four(input_list):
@@ -103,7 +103,7 @@ def inner_four(input_list):
 
     """
 
-    return []
+    return input_list[2:6]
 
 
 def inner_four_end(input_list):
@@ -119,7 +119,7 @@ def inner_four_end(input_list):
 
     """
 
-    return []
+    return input_list[-6:-2:-1]
 
 
 def replace_head(input_list):
@@ -136,7 +136,7 @@ def replace_head(input_list):
 
     """
 
-    pass
+    input_list[0] = 42
 
 
 def replace_third_and_last(input_list):
@@ -152,13 +152,15 @@ def replace_third_and_last(input_list):
     [0, 3, 37, 9, 12, 15, 18, 21, 24, 37]
 
     """
-
-    pass
+    # print(id(input_list))
+    input_list[2] = 37
+    input_list[-1] = 37
+    # print(id(input_list))
 
 
 def backwards(input_list):
     """Return the input list in reverse order. 
-    
+
     You cannot use the built-in reverse() method or reversed() function.
 
     For example:
@@ -167,8 +169,7 @@ def backwards(input_list):
     ['May', 'Apr', 'Mar', 'Feb', 'Jan']
 
     """
-
-    pass
+    return input_list[-1::-1]
 
 
 def every_other(input_list):
@@ -181,7 +182,7 @@ def every_other(input_list):
 
     """
 
-    pass
+    return input_list[0::2]
 
 
 def delete_third_and_seventh(input_list):
@@ -197,8 +198,7 @@ def delete_third_and_seventh(input_list):
     ['Do', 'Re', 'Fa', 'So', 'La', 'Do']
 
     """
-
-    pass
+    input_list[2:8] = []
 
 
 ### List Iteration Problems. Built-in methods are allowed for these! ###
@@ -212,8 +212,13 @@ def indices_of_positive_numbers(input_list):
     [0, 2, 3, 6]
 
     """
+    new_list_of_indices = []
 
-    pass
+    for i in input_list:
+        if i > 0:
+            new_list.append(range(len(input_list)))
+
+    return new_list_of_indices
 
 
 def sum_repeats(input_list):
@@ -229,4 +234,11 @@ def sum_repeats(input_list):
 
     """
 
-    pass
+    new_list = []
+
+    for i, num in enumerate(input_list):
+        if input_list[i] == input_list[i + 1]:
+            new_list.append(num)
+            i + 1
+        total_sum = sum(new_list)
+        return total_sum
